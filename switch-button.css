@@ -1,0 +1,33 @@
+.box {
+    height: 100px;
+    width: 200px;
+    border-radius: 50px;
+    background-color: rgb(240, 239, 239);
+}
+.button {
+    position:absolute;
+    height: 100px;
+    width: 200px;
+    border-radius: 50px;
+    cursor: pointer;
+    filter:opacity(0%);
+    z-index: 2;
+}
+.box::before{
+    content:'';
+    position:absolute;
+    left:10px;
+    top: 10px;
+    width:100px;
+    height:96px;
+    border-radius: 50px;
+    background-color:white;
+    transition:left 0.5s ease-in-out;
+}
+.button:checked ~ .box::before {
+    content:'';
+    left:106px;
+}
+.button:checked ~ .box {
+    background-color: rgb(183, 132, 230);
+}
